@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expenses</title>
+</head>
+<body>
+<h>TO BEDZIE MOJA STRONA</h>
+<div>pierwszy div</div>
+<div>
+    <button onclick="getJSON('/hello/kamil')" type="button">Click Me!</button>
+</div>
+</body>
+<style>
+    div {
+        color: brown;
+    }
+</style>
+<script>
+  var getJSON = function(url) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        console.log('ERROR')
+      } else {
+        alert(xhr.response)
+      }
+    };
+    xhr.send();
+  };
+</script>
+</html>
